@@ -1,8 +1,6 @@
 
 <%= form_for(attachment) do |f| %>
-
 	<%= render partial: 'errors', locals: { attachment: attachment } %>
-
 	<div class="form-group">
 		<strong><%= f.label :title %></strong>
 		<%= f.text_field :title, class: "form-control" %>
@@ -65,5 +63,4 @@
 	</div>
 
 <% end %>
-
 

@@ -9,19 +9,18 @@ class User < ApplicationRecord
 
   has_many :attachments, dependent: :destroy
   accepts_nested_attributes_for :attachments
+
+  has_many :reactions
   
   def admin?
   	has_role?(:admin)
   end
-
   def client?
   	has_role?(:client)
   end
-
   def visitor?
   	has_role?(:visitor)
   end
-
   def assign_default_role
   	self.add_role(:client) if self.roles.blank?
   end

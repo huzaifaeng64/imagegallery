@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
-load_and_authorize_resource
-before_filter :authenticate_user!
+	
+	load_and_authorize_resource
+	before_filter :authenticate_user!
 
 	def index
 		@roles = Role.all
@@ -21,15 +22,13 @@ before_filter :authenticate_user!
 	def create
 		@role = Role.create(role_params)
 		respond_to do |format|
-      	if @role.save
-        # TODO: Move hardcode flash message into language file
-        	format.html { redirect_to @role, notice: 'Role was successfully added.'}
-      	else
-        	format.html { render :new, alert: 'role not added'}
-      	end
+      if @role.save
+      	format.html { redirect_to @role, notice: 'Role was successfully added.'}
+    	else
+      	format.html { render :new, alert: 'Role not added.'}
     	end
+  	end
 	end
-
 	def update
 		@role = Role.find(params[:id])
 		if @role.update_attributes(role_params)

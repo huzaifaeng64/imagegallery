@@ -1,13 +1,12 @@
-
 <div class="container">
 	<h3>Profile</h3>
 	<p>
 		<strong> Email: </strong>
-		<%= @user.email if @user.email %>
+		<%= current_user.email%>
 	</p>
 	<p>
 		<strong> User Name: </strong>
-		<%= @user.username %>
+		<%= current_user.username %>
 	</p>
 	<div>
 		<%= link_to 'Back', url_for(:back), class: 'back-btn' %>
