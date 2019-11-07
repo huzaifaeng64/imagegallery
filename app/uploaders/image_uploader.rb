@@ -4,10 +4,13 @@ class ImageUploader < CarrierWave::Uploader::Base
    include CarrierWave::MiniMagick
 
   # version method for image processing
+<<<<<<< HEAD
   version :large_thumb do
     process resize_to_fill: [500,600]
   end
 
+=======
+>>>>>>> reaction-functionality
   version :thumb do
     process resize_to_fill: [200,200]
   end

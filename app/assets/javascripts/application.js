@@ -16,8 +16,12 @@
 //= require turbolinks
 //= require jquery.swipebox.js
 //= require attachments.js
+<<<<<<< HEAD
 //= require bootstrap
 
 $("div").on( "click", "button", function( event ) {
   $(event.delegateTarget ).css( "background-color", "green");
 });
+=======
+//= require bootstrap
+>>>>>>> reaction-functionality

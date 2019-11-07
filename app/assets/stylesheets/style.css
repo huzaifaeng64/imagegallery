@@ -1,6 +1,11 @@
 body {
+<<<<<<< HEAD
   background-color: #eee;
   color: black;
+=======
+  background-color: #fff;
+  color: #33;
+>>>>>>> reaction-functionality
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -8,7 +13,12 @@ body {
 }
 
 p, ol, ul, td {
+<<<<<<< HEAD
   font-size: 18px;
+=======
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 15px;
+>>>>>>> reaction-functionality
   line-height: 18px;
   margin: 33px;
 }
@@ -21,11 +31,22 @@ pre {
 
 a {
   color: #000;
+<<<<<<< HEAD
   text-decoration: none;
 
   &:hover {
     color: white;
     background-color: black;
+=======
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+>>>>>>> reaction-functionality
   }
 }
 
@@ -86,6 +107,7 @@ label {
 
 .navbar-right {
   text-align: right;
+<<<<<<< HEAD
 }
 
 
@@ -151,3 +173,6 @@ label {
 }
 
 .hidden { display: none; }
+=======
+}
+>>>>>>> reaction-functionality

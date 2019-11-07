@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1> Add New Attachment </h1>
 
 <div class="authform">
@@ -5,3 +6,10 @@
 </div>
 <br>
 <div><%= link_to 'Back', attachments_path, class: 'back-btn' %></div>
+=======
+<h1> Add New Image </h1>
+
+<%= render partial: 'form', locals: { attachment: @attachment } %>
+
+<p><%= link_to 'Back', attachments_path %></p>
+>>>>>>> reaction-functionality

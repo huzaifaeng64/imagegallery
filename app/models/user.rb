@@ -9,8 +9,11 @@ class User < ApplicationRecord
 
   has_many :attachments, dependent: :destroy
   accepts_nested_attributes_for :attachments
+<<<<<<< HEAD
 
   has_many :reactions
+=======
+>>>>>>> reaction-functionality
   
   def admin?
   	has_role?(:admin)

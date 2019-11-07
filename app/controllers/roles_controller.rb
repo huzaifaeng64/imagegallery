@@ -1,7 +1,12 @@
 class RolesController < ApplicationController
+<<<<<<< HEAD
 	
 	load_and_authorize_resource
 	before_filter :authenticate_user!
+=======
+load_and_authorize_resource
+before_filter :authenticate_user!
+>>>>>>> reaction-functionality
 
 	def index
 		@roles = Role.all
@@ -26,7 +31,11 @@ class RolesController < ApplicationController
         # TODO: Move hardcode flash message into language file
         	format.html { redirect_to @role, notice: 'Role was successfully added.'}
       	else
+<<<<<<< HEAD
         	format.html { render :new, alert: 'Role not added.'}
+=======
+        	format.html { render :new, alert: 'role not added'}
+>>>>>>> reaction-functionality
       	end
     	end
 	end

@@ -5,6 +5,7 @@ class Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
+<<<<<<< HEAD
       user ||= User.new # guest user (not logged in)
       
         # admin
@@ -38,6 +39,33 @@ class Ability
         alias_action :all_attachments, :show, :show_gallery, to: :read
         can :read, Attachment
       end
+=======
+    #
+       user ||= User.new # guest user (not logged in)
+       if user.admin?
+         can :manage, :all
+
+       elsif user.client?
+         can :read, ActiveAdmin::Page, name: "Dashboard"
+
+         can :create, Attachment
+         can :update, Attachment do |attachment|
+          attachment.user_id == user.id
+         end
+         can :destroy, Attachment do |attachment|
+          attachment.user_id == user.id
+         end
+         alias_action :all_attachments, :show, :index, :gallery, to: :read
+         can :read, Attachment
+         alias_action :create_gallery, :new_gallery, to: :gallery_actions
+         can :gallery_actions, User
+         can :show, User, id: user.id
+
+       else
+        alias_action :all_attachments, :show, :gallery, to: :read
+        can :read, Attachment
+       end
+>>>>>>> reaction-functionality
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

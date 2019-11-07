@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
   
+=======
+>>>>>>> reaction-functionality
   protect_from_forgery with: :exception
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -14,7 +17,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, :password, :current_password])
   end
 
+<<<<<<< HEAD
   # method to authenticate user for admin panel
+=======
+>>>>>>> reaction-functionality
   def authenticate_active_admin_user!
     authenticate_user!
     unless current_user.admin? || current_user.client?

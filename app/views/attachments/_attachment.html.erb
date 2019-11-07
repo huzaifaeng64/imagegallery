@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row mb-1 align-items-center text-center">
 <div class="col-md-2"><%= attachment.title %></div>
 <div class="col-md-2"> <%= attachment.amount %></div>
@@ -8,4 +9,13 @@
 	<%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 </div>
 </div>
+=======
+
+
+		<tr>
+    		<td><%= attachment.title %></td>
+    		<td><%= image_tag attachment.image.small_thumb.url if attachment.image? %></td>
+		</tr>
+
+>>>>>>> reaction-functionality
 

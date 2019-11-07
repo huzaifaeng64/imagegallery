@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+<<<<<<< HEAD
 
 	load_and_authorize_resource
 	before_filter :authenticate_user!, except: [:all_attachments, :show, :show_gallery]
@@ -53,10 +54,18 @@ class AttachmentsController < ApplicationController
 	      		end
 	      	end
     	end
+=======
+load_and_authorize_resource
+before_filter :authenticate_user!, except: [:all_attachments, :show]
+
+	def index
+		@attachments = current_user.attachments
+>>>>>>> reaction-functionality
 	end
 
 	def all_attachments
 		@users = User.all
+<<<<<<< HEAD
 		@attachments = Attachment.left_outer_joins(:reactions).group(:id).order("count(*) desc")
 	end
 
@@ -64,6 +73,13 @@ class AttachmentsController < ApplicationController
 		@user = current_user
 		@user_id = Attachment.select(:user_id).where(id: params[:id])
 		@attachments = Attachment.where(user_id: @user_id)
+=======
+	end
+
+	def gallery
+		@user = Attachment.select(:user_id).where(id: params[:id])
+		@attachments = Attachment.where(user_id: @user)
+>>>>>>> reaction-functionality
 	end
 
 	def show
@@ -81,12 +97,21 @@ class AttachmentsController < ApplicationController
 	def create
 		@attachment = current_user.attachments.create(attachment_params)
 		respond_to do |format|
+<<<<<<< HEAD
       		if @attachment.save
         		# TODO: Move hardcode flash message into language file
         		format.html { redirect_to attachment_path(@attachment), notice: 'Attachment was successfully added.'}
       		else
         		format.html { render :new, alert: 'Attachments could not be added.' }
       		end
+=======
+      	if @attachment.save
+        # TODO: Move hardcode flash message into language file
+        	format.html { redirect_to user_create_gallery_path(current_user), notice: 'Attachment was successfully added.'}
+      	else
+        	format.html { redirect_to user_create_gallery_path(current_user), alert: 'Attachments could not be added.' }
+      	end
+>>>>>>> reaction-functionality
     	end
 	end
 
@@ -110,7 +135,11 @@ class AttachmentsController < ApplicationController
 	end
 
 	private def attachment_params
+<<<<<<< HEAD
 		params.require(:attachment).permit(:title, :image_type, :description, :price, :created_by, :place, :user_id, :image_cache, :remote_image_url, :image, :images_cache, :remove_image, :amount)
+=======
+		params.require(:attachment).permit(:title, :image_type, :description, :price, :created_by, :place, :user_id, :image_cache, :remote_image_url, :image, :images_cache, :remove_image)
+>>>>>>> reaction-functionality
 	end
 
 

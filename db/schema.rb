@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191106142941) do
+=======
+ActiveRecord::Schema.define(version: 20191024104640) do
+>>>>>>> reaction-functionality
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +60,7 @@ ActiveRecord::Schema.define(version: 20191106142941) do
     t.index ["user_id"], name: "index_attachments_on_user_id", using: :btree
   end
 
+<<<<<<< HEAD
   create_table "reactions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "attachment_id"
@@ -67,6 +72,8 @@ ActiveRecord::Schema.define(version: 20191106142941) do
     t.index ["user_id"], name: "index_reactions_on_user_id", using: :btree
   end
 
+=======
+>>>>>>> reaction-functionality
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.string   "resource_type"

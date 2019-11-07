@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
  
   get 'visitors/index'
+<<<<<<< HEAD
 
   root to: 'visitors#index'
   resources :visitors
   
     # devise_for :admin_users, ActiveAdmin::Devise.config
+=======
+  root to: 'visitors#index'
+  
+ # devise_for :admin_users, ActiveAdmin::Devise.config
+>>>>>>> reaction-functionality
   ActiveAdmin.routes(self)
   
 
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
     match "", to: "users#create_gallery", via: :patch
   end
 
+<<<<<<< HEAD
   resources :attachments do
     member do
       post 'like'
@@ -28,5 +35,13 @@ Rails.application.routes.draw do
   resources :roles
   resources :orders
   get "/orders/confirm_order", to: "orders#confirm_order"
+=======
+  resources :attachments
+  get "all_attachments", to: "attachments#all_attachments"
+  get "/:id/gallery", to: "attachments#gallery", as: "gallery"
+  resources :roles
+  resources :orders
+  post "orders/orders/new", to: "orders#create"
+>>>>>>> reaction-functionality
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

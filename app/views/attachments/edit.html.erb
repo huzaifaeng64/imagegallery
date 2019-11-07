@@ -1,7 +1,18 @@
 <h1> Edit Attachment </h1>
+<<<<<<< HEAD
 <div class="authform"><%= render partial: 'form', locals: { attachment: @attachment } %></div>
 <br>
 <div>
 	<%= link_to 'show', attachment_path(@attachment), class: 'btn btn-info' %>
 	<%= link_to 'Back', url_for(:back), class: 'back-btn' %>
 </div>
+=======
+
+<%= render partial: 'form', locals: { attachment: @attachment } %>
+
+
+<p>
+	<%= link_to 'show', attachment_path(@attachment) %> |
+	<%= link_to 'Back', url_for(:back) %>
+</p>
+>>>>>>> reaction-functionality

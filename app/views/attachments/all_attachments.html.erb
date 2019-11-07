@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   <div class="row">
     <div class="col-md-12" id="show-attachment">
@@ -26,3 +27,22 @@
   </div>
 </div>
 <% end %>
+=======
+<h1> All Images </h1>
+
+
+<% @users.each do |user| %>
+<% if user.attachments.any? %><table><tr><td>
+	<p> <strong> User : </strong> <%= user.username %> </p>
+		<% user.attachments.each do |attachment| %>
+			<%= link_to( image_tag(attachment.image.thumb.url, alt: "image"), attachment ) if attachment.image? %>	
+		<% end %>	<p>
+		<%= link_to " Show Gallery", gallery_path(user.attachments.ids) %>
+	</p>
+		<hr>
+<% end %>
+<% end %>
+
+
+
+>>>>>>> reaction-functionality

@@ -17,7 +17,11 @@
     </div> <br>
 
     <fieldset>
+<<<<<<< HEAD
       <p><strong>Leave these fields blank if you don't want to change your password.</strong></p>
+=======
+      <p>Leave these fields blank if you don't want to change your password.</p>
+>>>>>>> reaction-functionality
       <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
@@ -34,6 +38,7 @@
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
     </fieldset>
+<<<<<<< HEAD
     <div>
      <%= f.submit 'Update', class: 'btn btn-primary' %>
      <%= link_to 'Back', url_for(:back), class: 'back-btn' %>
@@ -44,4 +49,12 @@
 <div class="authform">
 <h3>Delete Account</h3>
 <%= button_to "Delete My Account", registration_path(resource_name), class: 'btn btn-danger', :data => { :confirm => "Are you sure?" }, :method => :delete %>
+=======
+    <%= f.submit 'Update' %>
+  <% end %>
+</div>
+<div class="authform">
+<h3>Delete Account</h3>
+<%= button_to "Delete My Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+>>>>>>> reaction-functionality
 </div>

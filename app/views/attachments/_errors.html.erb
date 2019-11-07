@@ -1,4 +1,5 @@
 <% if attachment.errors.any? %>
+<<<<<<< HEAD
   <div id="error_explanation">
     <h2>
       <%= pluralize(attachment.errors.count, "error") %> prohibited
@@ -11,3 +12,17 @@
     </ul>
   </div>
 <% end %>
+=======
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(attachment.errors.count, "error") %> prohibited
+        this Attachment from being saved:
+      </h2>
+      <ul>
+        <% attachment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+>>>>>>> reaction-functionality

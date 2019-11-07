@@ -14,14 +14,21 @@ ActiveAdmin.register Attachment do
   end
 
 action_item :view, only: :show do
+<<<<<<< HEAD
   link_to 'view image of this attachment', attachment.image.url, target: " " if attachment.image?
+=======
+  link_to 'view image of this attachment', attachment.image.url if attachment.image?
+>>>>>>> reaction-functionality
 end
 
   filter :title
   filter :image_type
   filter :price
   filter :place
+<<<<<<< HEAD
   filter :amount
+=======
+>>>>>>> reaction-functionality
 
 
   form do |f|
@@ -33,7 +40,10 @@ end
       f.input :image_type
       f.input :price
       f.input :place
+<<<<<<< HEAD
       f.input :amount
+=======
+>>>>>>> reaction-functionality
       f.input :created_by
       f.inputs :image
    #   f.input :remote_image_url
