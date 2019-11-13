@@ -41,4 +41,10 @@ RSpec.describe Reaction, type: :model do
       is_expected.to validate_uniqueness_of(:user_id).scoped_to(:attachment_id)
     end
   end
+
+  context do
+    it 'is valid with valid attributes' do
+      expect(@reaction).to be_valid
+    end
+  end
 end

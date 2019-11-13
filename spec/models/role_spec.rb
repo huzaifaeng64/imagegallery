@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
+  subject { create(:role) }
   context 'fields' do
     it 'has a name field' do
       is_expected.to respond_to(:name)
@@ -18,6 +19,12 @@ RSpec.describe Role, type: :model do
   context 'associations' do
     it 'should have and belongs to many users' do
       is_expected.to have_and_belong_to_many(:users)
+    end
+  end
+
+  context do
+    it 'is valid with valid attributes' do
+      expect(subject).to be_valid
     end
   end
 end
