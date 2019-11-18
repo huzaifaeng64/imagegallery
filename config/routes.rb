@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'visitors/index'
+  get 'visitors', to: 'visitors#index'
 
   root to: 'visitors#index'
-  resources :visitors
 
   # devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
       post 'dislike'
     end
   end
+
   get 'all_attachments', to: 'attachments#all_attachments'
   get '/:id/show_gallery', to: 'attachments#show_gallery', as: 'gallery'
   resources :roles
