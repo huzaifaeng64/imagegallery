@@ -60,7 +60,7 @@ end
 gem 'bootstrap', '~> 4.0.0'
 
 # carrierwave gem for file uploads
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 # gem for validation of file uploads
 gem 'file_validators'
